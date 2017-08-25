@@ -2260,6 +2260,23 @@ bool DSI_clk_HS_state(void)
     return DSI_REG->DSI_PHY_LCCON.LC_HS_TX_EN ? TRUE : FALSE;
 }
 
+//add by AlexM0rtis
+void DSI_continuous_clock(void)
+{
+    DSI_TXRX_CTRL_REG tmp_reg;
+    tmp_reg = DSI_REG->DSI_TXRX_CTRL;
+    tmp_reg.HSTX_CKLP_EN=0;
+    OUTREG32(&DSI_REG->DSI_TXRX_CTRL, AS_UINT32(&tmp_reg));
+}
+
+void DSI_no_continuous_clock(void)
+{
+    DSI_TXRX_CTRL_REG tmp_reg;
+    tmp_reg = DSI_REG->DSI_TXRX_CTRL;
+    tmp_reg.HSTX_CKLP_EN=1;
+    OUTREG32(&DSI_REG->DSI_TXRX_CTRL, AS_UINT32(&tmp_reg));
+}
+//end by AlexM0rtis
 
 void DSI_lane0_ULP_mode(bool enter)
 {

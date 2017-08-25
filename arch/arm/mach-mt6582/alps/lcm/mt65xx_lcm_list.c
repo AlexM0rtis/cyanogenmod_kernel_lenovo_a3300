@@ -19,7 +19,7 @@
 #endif
 
 extern LCM_DRIVER nt35517_qhd_dsi_vdo_lcm_drv;
-extern LCM_DRIVER hx8389b_qhd_dsi_vdo_tianma_lcm_drv;
+extern LCM_DRIVER KD079D1_MIPI4LVDS_lcm_drv;
 
 
 LCM_DRIVER* lcm_driver_list[] = 
@@ -29,8 +29,8 @@ LCM_DRIVER* lcm_driver_list[] =
 	&nt35517_qhd_dsi_vdo_lcm_drv,
 #endif
 
-#if defined(HX8389B_QHD_DSI_VDO_TIANMA)
-	&hx8389b_qhd_dsi_vdo_tianma_lcm_drv,
+#if defined(KD079D1_MIPI4LVDS)
+	&KD079D1_MIPI4LVDS_lcm_drv,
 #endif
 
 };
